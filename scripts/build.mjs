@@ -1,0 +1,11 @@
+import { readFileSync, writeFileSync } from 'node:fs';
+const read = path => readFileSync(new URL('../' + path, import.meta.url), 'utf8');
+const kit = read('vendor/anatomy/kit/iso-kit.mjs');
+const names = [...kit.matchAll(/export (?:const|function) (\w+)/g)].map(m => m[1]);
+const license = `/* Anatomy by Ryan — https://github.com/wheresryan22/anatomy\n${read('vendor/anatomy/LICENSE')}\n*/\n`;
+const runtime = license + `const K = (() => {${kit.replace(/\bexport /g, '')}\nreturn {${names.join(',')}};})();\n`;
+const model = read('src/model.mjs').replace(/\bexport /g, '');
+const app = read('src/app.js');
+const html = read('src/page.html').replace('/* KIT_STYLES */', read('vendor/anatomy/kit/iso.css')).replace('/* APP_STYLES */', read('src/style.css')).replace('/* APP_SCRIPT */', (runtime + model + app).replace(/<\/script/gi, '<\\/script'));
+writeFileSync(new URL('../index.html', import.meta.url), html);
+console.log('Built index.html — standalone, no network dependencies.');

@@ -1,0 +1,7 @@
+[
+  ["key", "Escape", ".rp-stage"],
+  ["key", "i", ".rp-stage"],
+  ["wait", 1800],
+  ["eval", "if(document.querySelector('.rp-stage').hasAttribute('data-gl'))throw Error('fallback not active'); if(document.querySelectorAll('.rp-engine .it').length!==478)throw Error('SVG geometry missing'); 'SVG fallback keeps all 478 items'"],
+  ["shot", "shots/raptor-fallback.png", ".iso-plate"]
+]

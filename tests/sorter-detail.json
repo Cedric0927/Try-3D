@@ -1,0 +1,18 @@
+[
+  ["click", "#auto"],
+  ["click", "#explode"],
+  ["wait", 2000],
+  ["shot", "shots/sorter-apart-final.png", ".figure"],
+  ["shot", "shots/sorter-drivetrain.png", "#scene", 4, [440, 345, 185, 190]],
+  ["click", "#explode"],
+  ["wait", 1800],
+  ["click", "#step"],
+  ["wait", 800],
+  ["eval", "if(sorterState().phase!=='feed'||sorterState().running)throw Error('step to feed failed'); 'single-step feed passed'"],
+  ["click", "#step"],
+  ["until", "sorterState().phase==='weigh'&&!sorterState().running", 8000],
+  ["eval", "if(sorterState().parcel.x!==-145)throw Error('step stopping position incorrect'); 'single-step stop at weigh passed'"],
+  ["shot", "shots/sorter-assembled-final.png", ".app"],
+  ["click", "#section"],
+  ["shot", "shots/sorter-cover.png", ".figure"]
+]

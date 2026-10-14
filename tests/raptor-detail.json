@@ -1,0 +1,8 @@
+[
+  ["key", "Escape", ".rp-stage"],
+  ["shot", "shots/raptor-detail.png", ".rp-stage", 4, [250, 210, 360, 300]],
+  ["key", " ", ".rp-stage"],
+  ["wait", 1800],
+  ["lines", "shots/raptor-lines-exploded.png"],
+  ["shot", "shots/raptor-apart.png", ".iso-plate"]
+]

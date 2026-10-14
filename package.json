@@ -1,0 +1,13 @@
+{
+  "name": "parcel-conveyor",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "start": "node scripts/serve.mjs",
+    "build:sorter": "node sorter/build.mjs",
+    "audit:sorter": "node sorter/build.mjs --audit",
+    "start:sorter": "node sorter/serve.mjs"
+  }
+}

@@ -1,0 +1,19 @@
+# Local runtime output and intermediate validation data
+logs/
+node_modules/
+*.zip
+*.tmp
+.env
+.env.*
+
+# Keep only the three documentation previews
+shots/*
+!shots/live.png
+!shots/raptor-apart.png
+!shots/sorter-apart-final.png
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

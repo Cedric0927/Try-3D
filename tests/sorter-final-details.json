@@ -1,0 +1,12 @@
+[
+  ["click", "#auto"],
+  ["lines", "shots/sorter-lines-assembled.png"],
+  ["click", "#explode"],
+  ["wait", 2000],
+  ["lines", "shots/sorter-lines-apart.png"],
+  ["shot", "shots/sorter-apart-final.png", ".figure"],
+  ["shot", "shots/sorter-drivetrain.png", "#scene", 4, [440, 345, 185, 190]],
+  ["click", "#theme"],
+  ["lines", "shots/sorter-lines-dark.png"],
+  ["shot", "shots/sorter-apart-dark.png", ".figure"]
+]

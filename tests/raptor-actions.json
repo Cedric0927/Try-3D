@@ -1,0 +1,17 @@
+[
+  ["key", "Escape", ".rp-stage"],
+  ["until", "document.querySelector('[data-readout]').textContent.includes('cold')", 7000],
+  ["shot", "shots/raptor-assembled.png", ".iso-page"],
+  ["key", "ArrowRight", ".rp-stage"],
+  ["wait", 1800],
+  ["eval", "if(document.querySelector('.rp-stage').getAttribute('aria-valuenow')!=='1')throw Error('part selection failed'); 'component selection passed'"],
+  ["shot", "shots/raptor-exploded.png", ".iso-page"],
+  ["key", "i", ".rp-stage"],
+  ["until", "document.querySelector('[data-fire]').dataset.state==='on'", 8000],
+  ["wait", 1800],
+  ["eval", "if(!document.querySelector('.rp-stage').hasAttribute('data-gl'))throw Error('WebGL unavailable'); 'WebGL enabled'"],
+  ["shot", "shots/raptor-firing.png", ".iso-page"],
+  ["key", "Escape", ".rp-stage"],
+  ["until", "document.querySelector('[data-readout]').textContent.includes('cold')", 10000],
+  ["eval", "if(document.querySelector('[data-fire]').dataset.state)throw Error('shutdown failed'); 'shutdown passed'"]
+]

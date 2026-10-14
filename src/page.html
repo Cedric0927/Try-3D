@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>流转 · 快递分拣传送带</title><style>/* KIT_STYLES */
+/* APP_STYLES */</style></head>
+<body class="iso" data-theme="light">
+<main class="shell">
+  <header class="header"><a class="brand" href="./" aria-label="流转首页"><span class="brand-mark">↗</span>流转<span class="brand-en">FLOW / LAB</span></a><div class="header-meta"><span class="status-dot"></span>物流机制实验室<span class="edition">VOL. 001</span><button id="theme" class="icon-button" aria-label="切换深色主题">◐</button></div></header>
+  <section class="intro"><div><p class="eyebrow">PARCEL SORTING SYSTEM / 01</p><h1>每一件包裹，都有自己的方向。</h1><p class="subtitle">从入库到分流，观察一条快递分拣线如何运转。</p></div><div class="intro-note">输送 · 识别 · 分拣<br><span>等轴测交互演示</span></div></section>
+  <section class="workspace">
+    <div class="visual-column">
+      <div class="stage-card iso-plate" tabindex="0" role="group" aria-label="传送带演示，空格暂停或继续，N 添加包裹，方向键调整速度">
+        <div class="stage-top"><span class="small-label">FIG. 01 <span>自动分拣传送线</span></span><span id="run-status" class="run-pill"><i></i>运行中</span></div>
+        <svg id="scene" class="iso-svg" viewBox="0 0 1100 630" role="img" aria-label="有扫码门和三个目的地出口的立体快递传送带"><defs><filter id="shadow"><feGaussianBlur stdDeviation="5"/></filter></defs><g id="floor"></g><g id="world"></g></svg>
+        <div class="stage-bottom"><span>SPACE <span>暂停</span><span class="hint-separator">/</span>N <span>添加包裹</span></span><span id="scene-readout" data-readout>主线运行 · 等待扫码</span></div>
+      </div>
+      <div class="controls"><div class="transport"><button id="pause" class="primary"><span id="pause-icon">Ⅱ</span><span id="pause-text">暂停输送</span></button><button id="reset" class="secondary" aria-label="重置演示">↺ <span>重置</span></button></div><label class="speed-control" for="speed"><span>输送速度</span><input id="speed" type="range" min="0.5" max="2" step="0.25" value="1"><output id="speed-value">1.00×</output></label><label class="switch-label">自动投件<input id="auto" type="checkbox" checked><span class="switch"></span></label></div>
+      <div class="steps"><div><span class="step-number">01</span><div><strong>主线输送</strong><p>包裹保持间距，进入传送主线</p></div></div><div><span class="step-number">02</span><div><strong>扫码识别</strong><p>读取运单，匹配目的地出口</p></div></div><div><span class="step-number">03</span><div><strong>自动分流</strong><p>转向支线，完成目的地分拣</p></div></div></div>
+    </div>
+    <aside class="panel"><div class="panel-heading"><h2>运行看板</h2><span class="small-label">LIVE</span></div><div class="metrics"><div><span>已完成分拣</span><strong id="completed">0<span>件</span></strong></div><div><span>线上包裹</span><strong id="active">7<span>件</span></strong></div></div><div class="route-heading"><h3>目的地出口</h3><span>完成 / 件</span></div><div id="routes" class="routes"></div><div class="add-section"><label for="destination">手动投放包裹</label><div class="add-row"><select id="destination"><option value="0">上海 · SHA</option><option value="1">杭州 · HGH</option><option value="2">南京 · NKG</option></select><button id="add" aria-label="添加所选目的地的包裹">＋ 投件</button></div><p id="queue-message" aria-live="polite">等待投件：0 件</p></div><div class="event-heading"><h3>最近动态</h3><span class="small-label">EVENTS</span></div><ol id="events" class="events"><li class="empty-event">传送线已启动，等待包裹经过扫码门。</li></ol><div class="detail" id="detail"><span class="small-label">INSPECT A PARCEL</span><p>点击传送带上的包裹<br>查看它的目的地与当前状态。</p></div></aside>
+  </section>
+  <footer><span><i></i> 在运动中，理解物流。</span><span>机制示意 · 非工业控制系统<span class="footer-separator">/</span>SVG × Anatomy</span></footer>
+</main><script>/* APP_SCRIPT */</script>
+</body></html>
